@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -s "$(docker images biharimukund/game2048 -q)" ]
+if [ -s "$(sudo docker images biharimukund/game2048 -q)" ]
 then
 	sudo docker build -t biharimukund/game2048 .
 else

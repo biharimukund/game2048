@@ -5,12 +5,12 @@ pipeline {
     stages {
         stage("build") {
         steps {    
-	        sh './build.sh'
+	        sh './image_build.sh'
         }    
     }
         stage("deploy") {
             steps {         
-                    sh './deploy.sh'
+                    sh './container_deploy.sh'
             }    
         }
     }

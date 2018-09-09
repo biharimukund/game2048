@@ -5,12 +5,12 @@ pipeline {
     stages {
         stage("build") {
         steps {    
-	        sh('sudo docker build -t biharimukund/game2048 .')
+	        sh './build.sh'
         }    
     }
         stage("deploy") {
             steps {         
-                    sh('sudo docker run -i -d -p 32048:80 --name=game2048 biharimukund/game2048')
+                    sh './deploy.sh'
             }    
         }
     }

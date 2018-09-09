@@ -1,6 +1,6 @@
 #!/bin/bash
-
-if [ "$(curl -s -o /dev/null -I -w "%{http_code}" http://192.168.56.103:32048)" == "200" ]
+CONTAINER_IP=$(sudo docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' game2048)
+if [ "$(curl -s -o /dev/null -I -w "%{http_code}" http://$CONTAINER_IP:32048)" == "200" ]
 then
 	echo "Application is UP and accessible!"
 else

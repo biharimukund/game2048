@@ -13,5 +13,11 @@ pipeline {
                     sh './container_deploy.sh'
             }    
         }
+        stage("health_check") {
+            steps {
+                    sh './health_check.sh'
+            }
+        }
+
     }
 }
